@@ -20,6 +20,10 @@ ZEND_BEGIN_ARG_INFO_EX(collection_common_arginfo, 0, 0, 0)
                 ZEND_ARG_INFO(0, collection)
 ZEND_END_ARG_INFO()
 
+ZEND_BEGIN_ARG_INFO_EX(collection_clone_arginfo, 0, 0, 0)
+                ZEND_ARG_INFO(0, nothing)
+ZEND_END_ARG_INFO()
+
 ZEND_BEGIN_ARG_INFO_EX(collection_init_arginfo, 0, 0, 1)
                 ZEND_ARG_INFO(0, collection)
 ZEND_END_ARG_INFO()
@@ -139,7 +143,6 @@ ZEND_END_ARG_INFO()
 */
 zend_function_entry collection_methods[] = {
         PHP_ME(vtiful_collection, __construct,     collection_common_arginfo,         ZEND_ACC_PRIVATE|ZEND_ACC_CTOR)
-        PHP_ME(vtiful_collection, __clone,         collection_common_arginfo,         ZEND_ACC_PRIVATE|ZEND_ACC_FINAL)
         PHP_ME(vtiful_collection, init,            collection_init_arginfo,           ZEND_ACC_PUBLIC |ZEND_ACC_STATIC)
         PHP_ME(vtiful_collection, map,             collection_map_arginfo,            ZEND_ACC_PUBLIC)
         PHP_ME(vtiful_collection, all,             collection_common_arginfo,         ZEND_ACC_PUBLIC)
