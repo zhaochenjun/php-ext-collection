@@ -100,7 +100,7 @@ PHP_METHOD(vtiful_collection, avg)
         sum = average_column(CURRENT_COLLECTION, column);
     }
 
-    ZVAL_DOUBLE(return_value, (sum/zend_hash_num_elements(CURRENT_COLLECTION)))
+    ZVAL_DOUBLE(return_value, (sum/zend_hash_num_elements(CURRENT_COLLECTION)));
 }
 /* }}} */
 

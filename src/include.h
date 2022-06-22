@@ -83,7 +83,7 @@ PHP_METHOD(vtiful_collection, max);
         zend_refcounted *gc = Z_COUNTED_P(zval_p);                  \
         uint32_t t          = Z_TYPE_INFO_P(zval_p);                \
         if((t & (IS_TYPE_REFCOUNTED << Z_TYPE_FLAGS_SHIFT)) != 0) { \
-            GC_REFCOUNT(gc)++;                                      \
+            GC_ADDREF(gc);                                      \
         }                                                           \
     } while (0)
 
@@ -91,7 +91,7 @@ PHP_METHOD(vtiful_collection, max);
 
 // Define
 #define CURRENT_COLLECTION \
-        Z_OBJ_HT_P(getThis())->get_properties(getThis())
+        Z_OBJ_HT_P(getThis())->get_properties(Z_OBJ_P(getThis()))
 
 #define CURRENT_COLLECTION_COUNT \
         zend_hash_num_elements(CURRENT_COLLECTION)

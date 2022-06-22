@@ -284,7 +284,7 @@ void collection_implode(zend_array *current_collection, zend_string *str, zend_s
     ZEND_HASH_FOREACH_END();
 }
 
-int collection_compare(const void *a, const void *b)
+int collection_compare(Bucket *a, Bucket *b)
 {
     zval result;
     zval *first = NULL, *second = NULL;

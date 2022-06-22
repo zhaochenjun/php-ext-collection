@@ -47,7 +47,7 @@ void   collection_flip(zend_array *current_collection, zval *ret_val);
 void   collection_for_page(zend_array *current_collection, zend_long page, zend_long number, zval *ret_val);
 void   collection_group(zval *foreach_val, zval *tmp, zend_string *group_by_where, zval *group_key, zval *result);
 void   collection_implode(zend_array *current_collection, zend_string *str, zend_string *result);
-int    collection_compare(const void *a, const void *b);
+int    collection_compare(Bucket *a, Bucket *b);
 int    collection_compare_by_key(const void *a, const void *b, const void *key);
 
 #endif
